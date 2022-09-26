@@ -16,7 +16,12 @@ const updateUI = (data) => {
             <span>&deg;C</span>
         </div>
     </div>
-    `
+    `;
+
+    // Quitar la clase d-none si es necesario.
+    if(card.classList.contains('d-none')){
+        card.classList.remove('d-none');
+    };
 
 }
 
