@@ -8,7 +8,8 @@ const updateUI = (data) => {
     
     const cityDetails = data.cityDetails;
     const weather = data.weather;
-
+    
+    //Actualiza UI con datos de la ciudad y clima
     details.innerHTML = `
     <div class="details text-muted text-uppercase text-center">
         <h5 class="my-3">${cityDetails.EnglishName}</h5>
@@ -20,9 +21,11 @@ const updateUI = (data) => {
     </div>
     `;
 
+    //Inserta el ícono en el DOM.
     let iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
 
+    //Condicional día/noche, inserta imagen en el DOM.
     let timeSrc = null;
     if(weather.IsDayTime){
         timeSrc = 'img/day.svg';       
@@ -31,14 +34,14 @@ const updateUI = (data) => {
     };
     time.setAttribute('src', timeSrc);
 
-    // Quitar la clase d-none si es necesario.
+    // Quita la clase d-none si es necesario.
     if(card.classList.contains('d-none')){
         card.classList.remove('d-none');
     };
 
+    console.log(data);
+
 }
-
-
 
 const updateCity = async (city) => {
 
